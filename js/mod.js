@@ -12,14 +12,16 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0",
-	name: "Literally nothing",
+	num: "0.0.1",
+	name: "First Upgrade",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
+	<h3>v0.0.1</h3><br>
+		- Added cursors<br>
+		- Added the first cursor upgrade<br>
 	<h3>v0.0</h3><br>
-		- Added things.<br>
-		- Added stuff.`
+		- woo first version<br>`
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
 
@@ -41,7 +43,8 @@ function getPointGen() {
 	if(!canGenPoints())
 		return new Decimal(0)
 
-	let gain = new Decimal(1)
+	let gain = new Decimal(0)
+	gain = gain.add(layers.c.cps())
 	return gain
 }
 
